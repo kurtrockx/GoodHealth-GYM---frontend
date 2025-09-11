@@ -1,28 +1,33 @@
 import burgerIcon from "../assets/burgerIcon.svg";
 import gymLogo from "../assets/gymLogo.png";
 import Navbar from "./Navbar";
+import NavPanel from "./NavPanel";
 
 export default function DashboardPanel() {
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="relative flex min-h-[100dvh] flex-col">
       <Navbar />
       <div className="flex flex-1">
-        <div className="flex flex-col justify-between">
-          <ul className="flex max-w-[20em] flex-1 flex-col gap-8 bg-[#efefef] px-20 py-16 text-2xl">
-            <li>Dashboard</li>
-            <li>Log Session</li>
-            <li>Membership</li>
-            <li>Daily Log</li>
-            <li>Inventory</li>
-            <li>Revenue</li>
-          </ul>
-          <div className="flex gap-2 border-t-[#f9a826] bg-black px-4 py-[2em] text-center">
-            <h4 className="flex-1 text-white">Logged in as:</h4>
-            <h4 className="flex-1 text-[#f9a826]">Admin/Server</h4>
+        <NavPanel />
+        <div className="relative z-1 flex flex-1 flex-col">
+          <div className="flex h-[40%] flex-1 flex-col justify-between bg-[#f9a826] p-12 pb-0">
+            <h1 className="mx-auto w-[88%] text-5xl">Dashboard</h1>
+            <div className="mx-auto flex h-[56%] w-[88%] flex-col justify-between rounded-tl-2xl rounded-tr-2xl border-1 bg-white px-8 pt-10">
+              <h1 className="text-5xl">Welcome to J Cruz Gym Dashboard!</h1>
+              <h4 className="text-2xl">
+                A dashboard gym system ensures a seamless experience by
+              </h4>
+            </div>
           </div>
-        </div>
-        <div className="flex h-[40%] flex-1 flex-col bg-[#f9a826]">
-          <h1>Dashboard</h1>
+          <div className="flex h-[60%] flex-col bg-[#ebebeb] p-12 pt-0">
+            <div className="mx-auto flex h-[36%] w-[88%] flex-col justify-between rounded-br-2xl rounded-bl-2xl bg-black px-8">
+              <h4 className="text-2xl text-white">
+                streamlining all aspects of gym management in one centralized
+                platform.
+              </h4>
+            </div>
+            <div className="flex flex-1 justify-between bg-red-200"></div>
+          </div>
         </div>
       </div>
     </div>
