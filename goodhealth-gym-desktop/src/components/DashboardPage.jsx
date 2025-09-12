@@ -1,5 +1,3 @@
-import burgerIcon from "../assets/burgerIcon.svg";
-import gymLogo from "../assets/gymLogo.png";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
