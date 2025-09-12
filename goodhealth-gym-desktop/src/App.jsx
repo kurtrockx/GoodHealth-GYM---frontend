@@ -1,14 +1,14 @@
 import { useState } from "react";
-import LoginPanel from "./components/LoginPanel";
-import DashboardPanel from "./components/DashboardPanel";
+import LoginPage from "./components/LoginPage";
+import DashboardPage from "./components/DashboardPage";
 
 function App() {
-  const [currPanel, setCurrPanel] = useState("login");
+  const [currPage, setCurrPage] = useState("login");
 
   return (
     <>
-      {currPanel === "login" && <LoginPanel onCurrPanel={setCurrPanel} />}
-      {currPanel === "dashboard" && <DashboardPanel />}
+      {currPage === "login" && <LoginPage onCurrPage={setCurrPage} />}
+      {currPage === "dashboard" && <DashboardPage />}
     </>
   );
 }

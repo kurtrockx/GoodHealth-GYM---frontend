@@ -1,14 +1,14 @@
 import burgerIcon from "../assets/burgerIcon.svg";
 import gymLogo from "../assets/gymLogo.png";
 import Navbar from "./Navbar";
-import NavPanel from "./NavPanel";
+import Sidebar from "./Sidebar";
 
-export default function DashboardPanel() {
+export default function DashboardPage() {
   return (
     <div className="relative flex min-h-[100dvh] flex-col">
       <Navbar />
       <div className="flex flex-1">
-        <NavPanel />
+        <Sidebar />
         <div className="relative z-1 flex flex-1 flex-col max-md:pb-40">
           {/* yellow top */}
           <div className="flex flex-2/5 flex-col justify-between bg-[#f9a826] p-4 pb-0 max-xl:gap-4 md:p-12 md:pb-0">
