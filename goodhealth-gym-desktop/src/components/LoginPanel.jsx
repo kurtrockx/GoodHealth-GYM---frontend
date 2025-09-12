@@ -18,7 +18,7 @@ export default function LoginPanel({ onCurrPanel }) {
         />
         <button
           onClick={() => onCurrPanel("dashboard")}
-          className="aspect-square h-full rounded-full bg-[#f2a32a] p-2"
+          className="aspect-square h-full rounded-full bg-[#f2a32a] p-2 duration-200 hover:-translate-y-1 cursor-pointer active:scale-95"
         >
           <img src={rightArrow} alt="continue" />
         </button>
