@@ -7,12 +7,13 @@ import Membership from "./Membership";
 
 export default function MainPages() {
   const [currPanel, setCurrPanel] = useState("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="relative flex min-h-[100dvh] flex-col">
-      <Navbar />
+      <Navbar onSidebarOpen={setSidebarOpen} />
       <div className="flex flex-1">
-        <Sidebar onCurrPanel={setCurrPanel} />
+        {sidebarOpen && <Sidebar onCurrPanel={setCurrPanel} />}
         {currPanel === "dashboard" && <DashboardPage />}
         {currPanel === "logsession" && <LogSession />}
         {currPanel === "membership" && <Membership />}
