@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LoginPage from "./components/LoginPage";
-import DashboardPage from "./components/DashboardPage";
+import MainPages from "./components/MainPages";
 
 function App() {
   const [currPage, setCurrPage] = useState("login");
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       {currPage === "login" && <LoginPage onCurrPage={setCurrPage} />}
-      {currPage === "dashboard" && <DashboardPage />}
+      {currPage === "main" && <MainPages />}
     </>
   );
 }

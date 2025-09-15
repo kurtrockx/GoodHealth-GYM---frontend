@@ -5,21 +5,24 @@ import dailyLogIcon from "../assets/logon.svg";
 import inventoryIcon from "../assets/inventory.svg";
 import revenueIcon from "../assets/revenue.svg";
 
-export default function Sidebar() {
+export default function Sidebar({ onCurrPanel }) {
   const panel = [
-    { name: "Dashboard", image: dashboardIcon },
-    { name: "Log Session", image: logonIcon },
-    { name: "Membership", image: membershipIcon },
-    { name: "Daily Log", image: dailyLogIcon },
-    { name: "Inventory", image: inventoryIcon },
-    { name: "Revenue", image: revenueIcon },
+    { name: "Dashboard", image: dashboardIcon, panel: "dashboard" },
+    { name: "Log Session", image: logonIcon, panel: "logsession" },
+    { name: "Membership", image: membershipIcon, panel: "membership" },
+    { name: "Daily Log", image: dailyLogIcon, panel: "dailylog" },
+    { name: "Inventory", image: inventoryIcon, panel: "inventory" },
+    { name: "Revenue", image: revenueIcon, panel: "revenue" },
   ];
 
   return (
     <div className="relative z-2 flex flex-col justify-between shadow-md shadow-black/50">
       <ul className="flex max-w-[20em] flex-1 flex-col gap-8 bg-[#efefef] px-20 py-16 text-2xl">
         {panel.map((p) => (
-          <li className="group relative flex cursor-pointer items-center gap-4">
+          <li
+            className="group relative flex cursor-pointer items-center gap-4"
+            onClick={() => onCurrPanel(p.panel)}
+          >
             <img src={p.image} alt={p.name} className="aspect-square h-8" />
             <p>{p.name}</p>
             <div className="absolute h-1 w-full -translate-y-0 bg-[#f9a826] opacity-0 duration-100 group-hover:translate-y-[500%] group-hover:opacity-100"></div>

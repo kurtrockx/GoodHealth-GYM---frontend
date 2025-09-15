@@ -15,7 +15,7 @@ export default function LoginPage({ onCurrPage }) {
           className="flex-1 overflow-hidden text-2xl tracking-[3.5em] text-white outline-0"
         />
         <button
-          onClick={() => onCurrPage("dashboard")}
+          onClick={() => onCurrPage("main")}
           className="aspect-square h-full cursor-pointer rounded-full bg-[#f2a32a] p-2 duration-200 hover:-translate-y-1 active:scale-95"
         >
           <img src={rightArrow} alt="continue" />
