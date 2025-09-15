@@ -9,7 +9,7 @@ export default function Navbar({ onSidebarOpen }) {
           className="h-full cursor-pointer"
           src={burgerIcon}
           alt="burgerIcon"
-          onClick={() => onSidebarOpen(curr => !curr)}
+          onClick={() => onSidebarOpen((curr) => !curr)}
         />
         <h1 className="text-2xl text-black">J CRUZ GOODHEALTH GYM</h1>
       </div>
