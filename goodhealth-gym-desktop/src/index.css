@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
-html, body, #root {
+html,
+body,
+#root {
   font-family: "Montserrat";
   font-weight: 600;
   min-width: 100dvw;
   min-height: 100dvh;
-    overflow: hidden;
+  overflow: hidden;
+}
+
+.editMember input {
+  outline: 0;
+  display: block;
+  flex: 1 1 0;
+  color: #f9a819;
+}
+
+.editMember input[type="radio"]:checked {
+  accent-color: #f9a819;
 }

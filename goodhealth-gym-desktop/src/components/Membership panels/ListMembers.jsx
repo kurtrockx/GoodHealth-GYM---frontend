@@ -1,44 +1,6 @@
 import editIcon from "../../assets/editIcon.png";
 import addMembersIcon from "../../assets/addMembersIcon.png";
 
-const members = [
-    {
-        name: "John Doe",
-        type: "Student",
-        membership: "4 1/2 months",
-        contactNumber: "123-456-7890",
-        email: "johndoe@example.com",
-    },
-    {
-        name: "Jane Smith",
-        type: "Student",
-        membership: "4 1/2 months",
-        contactNumber: "987-654-3210",
-        email: "janesmith@example.com",
-    },
-    {
-        name: "Alice Johnson",
-        type: "Student",
-        membership: "4 1/2 months",
-        contactNumber: "456-789-0123",
-        email: "alicejohnson@example.com",
-    },
-    {
-        name: "Bob Brown",
-        type: "Student",
-        membership: "4 1/2 months",
-        contactNumber: "321-654-0987",
-        email: "bobbrown@example.com",
-    },
-    {
-        name: "Charlie Davis",
-        type: "Student",
-        membership: "4 1/2 months",
-        contactNumber: "789-012-3456",
-        email: "charliedavis@example.com",
-    },
-];
-
 function Categories() {
   return (
     <div className="flex items-center border-b border-black bg-[#414141] text-center text-2xl text-white">
@@ -53,7 +15,7 @@ function Categories() {
     </div>
   );
 }
-export function ListMembers({ onMembersPanel }) {
+export function ListMembers({ onMembersPanel, members, onChosenMember }) {
   return (
     <>
       <button
@@ -77,13 +39,19 @@ export function ListMembers({ onMembersPanel }) {
           <Categories />
           <div className="flex flex-1 flex-col">
             {members.map((m) => (
-              <div className="flex border-b text-2xl text-black">
+              <div key={m.name} className="flex border-b text-2xl text-black">
                 <h4 className="flex-1 border-r px-4 py-2">{m.name}</h4>
                 <h4 className="flex-1 border-r px-4 py-2">{m.type}</h4>
                 <h4 className="flex-1 border-r px-4 py-2">{m.membership}</h4>
                 <h4 className="flex-1 border-r px-4 py-2">{m.contactNumber}</h4>
                 <h4 className="flex-2 border-r px-4 py-2 text-lg">{m.email}</h4>
-                <button className="block cursor-pointer duration-200 hover:-translate-y-0.5 active:scale-95">
+                <button
+                  onClick={() => {
+                    onChosenMember(m);
+                    onMembersPanel('editMember')
+                  }}
+                  className="block cursor-pointer duration-200 hover:-translate-y-0.5 active:scale-95"
+                >
                   <img src={editIcon} alt="edit" />
                 </button>
               </div>

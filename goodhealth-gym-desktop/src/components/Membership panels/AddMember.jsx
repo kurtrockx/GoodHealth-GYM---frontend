@@ -7,7 +7,7 @@ export default function AddMember({ onMembersPanel }) {
     <>
       <Button
         onClick={() => onMembersPanel("listMembers")}
-        styles={{ "align-self": "self-end" }}
+        styles={{ alignSelf: "self-end" }}
       >
         Back
       </Button>
