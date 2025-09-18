@@ -4,8 +4,11 @@ import membershipIcon from "../assets/membership.svg";
 import dailyLogIcon from "../assets/logon.svg";
 import inventoryIcon from "../assets/inventory.svg";
 import revenueIcon from "../assets/revenue.svg";
+import { useState } from "react";
 
 export default function Sidebar({ onCurrPanel }) {
+  const [activePanel, setActivePanel] = useState("Dashboard");
+
   const panel = [
     { name: "Dashboard", image: dashboardIcon, panel: "dashboard" },
     { name: "Log Session", image: logonIcon, panel: "logsession" },
@@ -19,13 +22,22 @@ export default function Sidebar({ onCurrPanel }) {
     <div className="relative z-2 flex flex-col justify-between shadow-md shadow-black/50">
       <ul className="flex max-w-[20em] flex-1 flex-col gap-8 bg-[#efefef] px-20 py-16 text-2xl">
         {panel.map((p) => (
-          <li key={p.panel}
+          <li
+            key={p.panel}
             className="group relative flex cursor-pointer items-center gap-4 px-2"
-            onClick={() => onCurrPanel(p.panel)}
+            onClick={() => {
+              onCurrPanel(p.panel);
+              setActivePanel(p.name);
+            }}
           >
             <img src={p.image} alt={p.name} className="aspect-square h-8" />
             <p>{p.name}</p>
-            <div className="absolute h-1 w-full -translate-y-0 bg-[#f9a826] opacity-0 duration-100 group-hover:translate-y-[500%] group-hover:opacity-100"></div>
+            {activePanel !== p.name && (
+              <div className="absolute h-1 w-full -translate-y-0 bg-[#f9a826] opacity-0 duration-100 group-hover:translate-y-[500%] group-hover:opacity-100"></div>
+            )}
+            {activePanel === p.name && (
+              <div className="absolute h-1 w-full translate-y-[500%] bg-[#f9a826] opacity-100 duration-100"></div>
+            )}
           </li>
         ))}
       </ul>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  scrollbar-gutter: auto;
+}
+
 html,
 body,
 #root {
@@ -19,4 +23,8 @@ body,
 
 .editMember input[type="radio"]:checked {
   accent-color: #f9a819;
+}
+
+.gutter::-webkit-scrollbar {
+  display: none;
 }

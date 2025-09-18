@@ -32,23 +32,25 @@ export function ListMembers({ onMembersPanel, members, onChosenMember }) {
           className="rounded-xl bg-[#d9d9d9] px-12 py-4 text-4xl text-[#575757] outline-0 placeholder:text-[#575757]"
           placeholder="Search"
         />
-        <div className="flex w-full flex-1 flex-col bg-[#d9d9d9]">
+        <div className="flex w-full flex-1 flex-col bg-[#d9d9d9] shadow-[inset_0px_-10px_10px_rgba(0,0,0,0.25)]">
           <h2 className="border-b py-4 text-center text-4xl">
             Members Information
           </h2>
           <Categories />
-          <div className="flex flex-1 flex-col">
+          <div className="gutter flex max-h-[50dvh] flex-1 flex-col overflow-y-scroll">
             {members.map((m) => (
               <div key={m.name} className="flex border-b text-2xl text-black">
                 <h4 className="flex-1 border-r px-4 py-2">{m.name}</h4>
                 <h4 className="flex-1 border-r px-4 py-2">{m.type}</h4>
                 <h4 className="flex-1 border-r px-4 py-2">{m.membership}</h4>
                 <h4 className="flex-1 border-r px-4 py-2">{m.contactNumber}</h4>
-                <h4 className="flex-2 border-r px-4 py-2 text-lg">{m.email}</h4>
+                <h4 className="flex-2 border-r px-4 py-2 text-center text-lg">
+                  {m.email}
+                </h4>
                 <button
                   onClick={() => {
                     onChosenMember(m);
-                    onMembersPanel('editMember')
+                    onMembersPanel("editMember");
                   }}
                   className="block cursor-pointer duration-200 hover:-translate-y-0.5 active:scale-95"
                 >

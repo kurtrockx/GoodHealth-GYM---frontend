@@ -39,6 +39,76 @@ const members = [
     contactNumber: "789-012-3456",
     email: "charliedavis@example.com",
   },
+  {
+    name: "John Doe",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "123-456-7890",
+    email: "johndoe@example.com",
+  },
+  {
+    name: "Jane Smith",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "987-654-3210",
+    email: "janesmith@example.com",
+  },
+  {
+    name: "Alice Johnson",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "456-789-0123",
+    email: "alicejohnson@example.com",
+  },
+  {
+    name: "Bob Brown",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "321-654-0987",
+    email: "bobbrown@example.com",
+  },
+  {
+    name: "Charlie Davis",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "789-012-3456",
+    email: "charliedavis@example.com",
+  },
+  {
+    name: "John Doe",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "123-456-7890",
+    email: "johndoe@example.com",
+  },
+  {
+    name: "Jane Smith",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "987-654-3210",
+    email: "janesmith@example.com",
+  },
+  {
+    name: "Alice Johnson",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "456-789-0123",
+    email: "alicejohnson@example.com",
+  },
+  {
+    name: "Bob Brown",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "321-654-0987",
+    email: "bobbrown@example.com",
+  },
+  {
+    name: "Charlie Davis",
+    type: "Student",
+    membership: "4 1/2 months",
+    contactNumber: "789-012-3456",
+    email: "charliedavis@example.com",
+  },
 ];
 
 export default function Membership() {
@@ -67,7 +137,7 @@ export default function Membership() {
         <AddMember onMembersPanel={setMembersPanel} />
       )}
       {membersPanel === "editMember" && chosenMember !== null && (
-        <EditMember member={chosenMember} />
+        <EditMember member={chosenMember} onMembersPanel={setMembersPanel} />
       )}
     </div>
   );
