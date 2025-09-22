@@ -37,7 +37,7 @@ export function ListMembers({ onMembersPanel, members, onChosenMember }) {
             Members Information
           </h2>
           <Categories />
-          <div className="gutter flex max-h-[50dvh] flex-1 flex-col overflow-y-scroll">
+          <div className="gutter flex max-h-[45dvh] flex-1 flex-col overflow-y-scroll">
             {members.map((m) => (
               <div key={m.name} className="flex border-b text-2xl text-black">
                 <h4 className="flex-1 border-r px-4 py-2">{m.name}</h4>

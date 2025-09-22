@@ -3,9 +3,9 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import DashboardPage from "./DashboardPage";
 import LogSession from "./LogSession";
-import Membership from "./Membership";
+import Membership from "./MembershipPage";
 
-export default function MainPages() {
+export default function MainPages({ currLogin }) {
   const [currPanel, setCurrPanel] = useState("dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -13,7 +13,9 @@ export default function MainPages() {
     <div className="relative flex min-h-[100dvh] flex-col">
       <Navbar onSidebarOpen={setSidebarOpen} />
       <div className="flex flex-1">
-        {sidebarOpen && <Sidebar onCurrPanel={setCurrPanel} />}
+        {sidebarOpen && (
+          <Sidebar onCurrPanel={setCurrPanel} currLogin={currLogin} />
+        )}
         {currPanel === "dashboard" && <DashboardPage />}
         {currPanel === "logsession" && <LogSession />}
         {currPanel === "membership" && <Membership />}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ListMembers } from "../components/Membership panels/ListMembers";
+import { ListMembers } from "./Membership panels/ListMembers";
 import AddMember from "./Membership panels/AddMember";
 import EditMember from "./Membership panels/EditMember";
 

@@ -4,10 +4,11 @@ import membershipIcon from "../assets/membership.svg";
 import dailyLogIcon from "../assets/logon.svg";
 import inventoryIcon from "../assets/inventory.svg";
 import revenueIcon from "../assets/revenue.svg";
+import logoutIcon from "../assets/logoutIcon.svg";
 import { useState } from "react";
 
-export default function Sidebar({ onCurrPanel }) {
-  const [activePanel, setActivePanel] = useState("Dashboard");
+export default function Sidebar({ onCurrPanel, currLogin }) {
+  const [activePanel, setActivePanel] = useState("  ");
 
   const panel = [
     { name: "Dashboard", image: dashboardIcon, panel: "dashboard" },
@@ -41,9 +42,19 @@ export default function Sidebar({ onCurrPanel }) {
           </li>
         ))}
       </ul>
-      <div className="flex gap-2 border-t-[#f9a826] bg-black px-4 py-[2em] text-center">
+      <div className="flex items-center justify-center gap-2 border-t-[#f9a826] bg-black px-4 py-[2em] text-center">
         <h4 className="flex-1 text-white">Logged in as:</h4>
-        <h4 className="flex-1 text-[#f9a826]">Admin/Server</h4>
+        <h4 className="flex-1 text-[#f9a826] uppercase">{currLogin}</h4>
+        <button className="flex max-h-full flex-1 flex-row-reverse">
+          <img
+            src={logoutIcon}
+            alt="logout"
+            className="h-8 cursor-pointer object-contain duration-100 hover:-translate-y-0.5"
+            onClick={() => {
+              location.reload();
+            }}
+          />
+        </button>
       </div>
     </div>
   );

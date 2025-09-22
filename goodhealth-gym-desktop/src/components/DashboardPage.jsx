@@ -9,7 +9,7 @@ export default function DashboardPage() {
           <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
             Welcome to J Cruz Gym Dashboard!
           </h1>
-          <h4 className="text-sm xl:text-xl 2xl:text-2xl">
+          <h4 className="text-center text-sm xl:text-xl 2xl:text-2xl">
             A dashboard gym system ensures a seamless experience by
           </h4>
         </div>
@@ -18,7 +18,7 @@ export default function DashboardPage() {
       <div className="flex flex-3/5 flex-col bg-[#ebebeb] p-4 pt-0 md:p-12 md:pt-0">
         {/* bottombox */}
         <div className="mx-auto flex w-[88%] flex-col justify-between rounded-br-2xl rounded-bl-2xl bg-black px-4 pb-4 xl:h-[46%] 2xl:h-[56%] 2xl:px-8 2xl:pb-10">
-          <h4 className="text-sm text-white xl:text-xl 2xl:text-2xl">
+          <h4 className="text-center text-sm text-white xl:text-xl 2xl:text-2xl">
             streamlining all aspects of gym management in one centralized
             platform.
           </h4>
