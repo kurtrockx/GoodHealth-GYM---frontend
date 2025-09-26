@@ -12,12 +12,12 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    focusable: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
     },
   });
-
   if (isDev) {
     // Vite dev server
     win.loadURL("http://localhost:5173");

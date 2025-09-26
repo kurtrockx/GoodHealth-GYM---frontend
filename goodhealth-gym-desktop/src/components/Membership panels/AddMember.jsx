@@ -1,8 +1,15 @@
+import { useState } from "react";
 import Button from "../Button";
-import cautionIcon from "../../assets/cautionIcon.png";
-import loadingIcon from "../../assets/loadingIcon.png";
+import Loading from "../Loading";
+import Facecam from "./Add Member States/Facecam";
+import StudentId from "./Add Member States/StudentId";
+import InputCreds from "./Add Member States/InputCreds";
+import Confirm from "../Confirm";
 
 export default function AddMember({ onMembersPanel }) {
+  //loading, facecam, studentId, inputCreds, confirm, emailNotif
+  const [memberState, setMemberState] = useState("loading");
+
   return (
     <>
       <Button
@@ -11,16 +18,12 @@ export default function AddMember({ onMembersPanel }) {
       >
         Back
       </Button>
-      <div className="flex-1 px-24 py-12">
-        <div className="flex h-full flex-1 flex-col items-center justify-center gap-8 bg-[#d9d9d9]">
-          <img src={cautionIcon} alt="caution" className="w-48" />
-          <div className="flex flex-col items-center">
-            <h1 className="text-4xl">Place the RFID Card on</h1>
-            <h1 className="text-4xl">RFID Card Reader</h1>
-          </div>
-          <img src={loadingIcon} alt="loading" className="w-48 animate-spin" />
-        </div>
-      </div>
+
+      {memberState === "loading" && <Loading />}
+      {memberState === "facecam" && <Facecam />}
+      {memberState === "studentId" && <StudentId />}
+      {memberState === "inputCreds" && <InputCreds />}
+      {memberState === "confirm" && <Confirm />}
     </>
   );
 }

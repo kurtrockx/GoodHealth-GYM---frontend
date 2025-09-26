@@ -16,7 +16,7 @@ export default function LogCredentials() {
           </div>
         </div>
       </div>
-      <Button styles={{ alignSelf: "self-end" }}>SUBMIT</Button>
+      <Button styles={{ alignSelf: "center" }}>SUBMIT</Button>
     </div>
   );
 }
